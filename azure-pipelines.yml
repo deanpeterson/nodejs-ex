@@ -14,6 +14,10 @@ steps:
 - task: oc-cmd@2
   inputs:
     openshiftService: 'AWS Openshift Connection'
+    cmd: 'oc project azure-devops-demo'
+- task: oc-cmd@2
+  inputs:
+    openshiftService: 'AWS Openshift Connection'
     cmd: 'oc start-build nodejs-ex --follow'
 - task: oc-cmd@2
   inputs:
