@@ -11,6 +11,14 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: oc-cmd@2
+  inputs:
+    openshiftService: 'AWS Openshift Connection'
+    cmd: 'oc start-build nodejs-ex --follow'
+- task: oc-cmd@2
+  inputs:
+    openshiftService: 'AWS Openshift Connection'
+    cmd: 'oc status'
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
